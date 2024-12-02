@@ -13,7 +13,8 @@
   "dependencies": {
     "koa": "^2.15.3",
     "koa-router": "^13.0.1",
-    "mockjs": "^1.1.0"
+    "mockjs": "^1.1.0",
+    "recharts": "^2.13.3"
   },
   "devDependencies": {
     "nodeman": "^1.1.2",

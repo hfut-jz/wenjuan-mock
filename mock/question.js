@@ -1,5 +1,6 @@
 const Mock = require('mockjs');
 const getQuestionList = require('./data/getQuestionList');
+const getComponentList=require('./data/getComponentList')
 
 const Random = Mock.Random;
 module.exports = [
@@ -18,80 +19,8 @@ module.exports = [
                     css:'',
                     isPublish:true,
                     //需要：组件列表
-                    componentList: [
-                        //1.标题
-                        {   //对其进行类型区分，相当于一个props
-                            fe_id: Random.id(),
-                            type:'questionTitle',//这里的类型是前后端统一订好的
-                            title: '标题',
+                    componentList: getComponentList()
 
-                            isHidden:false,
-                            isLocked:false,
-                            //这里的props与自己规定的type必须一致，规定了之后，那么就将其存储到store中去
-                            props:{
-                                text:'个人信息调研',
-                                level: 1,
-                                isCenter: false,
-                            }
-                        },
-                        //2.Input
-                        {
-                            fe_id: Random.id(),
-                            type:'questionInput',
-                            title: '输入框',
-                            isHidden: false,
-                            isLocked: false,
-                            props:{
-                                placeholder:'请输入内容',
-                                title:'你的姓名'
-                            }
-                        },
-                        //Paragraph
-                        {
-                            fe_id: Random.id(),
-                            type:'questionParagraph',
-                            title: '段落',
-                            isHidden: false,
-                            isLocked: false,
-                            props:{
-                                content:'请输入内容',
-                            }
-                        },
-                        //Info
-                        {
-                            fe_id: Random.id(),
-                            type:'questionInfo',
-                            title: '问卷信息',
-                            isHidden: false,
-                            isLocked: false,
-                            props:{
-                                title:'问卷信息',
-                                desc:'问卷描述',
-                            },
-                        },
-                        //Radio
-                        {
-                            fe_id: Random.id(),
-                            type:'questionRadio',
-                            title: '单选',
-                            isHidden: false,
-                            isLocked: false,
-                            props:{
-                                title:'你的性别',
-                                isVertical:false,
-                                options:[
-                                    {
-                                        value:'1',
-                                        text:'男'
-                                    },
-                                    {
-                                        value:'2',
-                                        text:'女'
-                                    },
-                                ]
-                            }
-                        },
-                    ]
                 },
             };
         },
